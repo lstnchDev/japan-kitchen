@@ -1,0 +1,13 @@
+.header__main{
+    max-width: 700px;
+    margin: 200px auto 50px;
+    background-color: rgba(66, 12, 117, 0.795);
+    border-radius: 15px;
+    padding: 20px 20px;
+    color: white;
+}
+.header__main p{
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
