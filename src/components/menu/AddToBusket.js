@@ -1,16 +1,27 @@
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
 import Button from "../UI/Button"
 import styles from "./css/AddToBusket.module.css"
 
 
 const AddToBusket = (props)=>{
+    const [amount, setAmount] = useState(1)
+    const onAmountHandler = (e)=>{
+        setAmount(e.target.value)
+    }
+    const onSubmitHandler = (e)=>{
+        e.preventDefault()
+        props.onAddAmount(amount)
+
+    }
     return (
         <Fragment>
-            <div className={styles.amount}>
-                <h3>Количество</h3>
-                <input type="number" value={1}/>
-            </div>
-            <Button className={styles.amount__btn} type='submit'>Добавить</Button>
+            <form onSubmit={onSubmitHandler}>
+                <div className={styles.amount}>
+                    <h3>Количество</h3>
+                    <input type="number" min={1} value={amount} onChange={onAmountHandler}/>
+                </div>
+                <Button className={styles.amount__btn} type='submit'>Добавить</Button>
+            </form>
         </Fragment>
     )
 }
