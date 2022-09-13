@@ -1,0 +1,14 @@
+.amount{
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    max-width: 2.5rem;
+    padding-left: 10px;
+    margin-left: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.amount__btn{
+    margin-top: 40px;
+}

@@ -1,0 +1,16 @@
+.menu__item{
+    display: flex;
+    justify-content: space-between;
+}
+.ingrediens{
+    font-style: italic;
+    margin: 10px 0;
+}
+.price{
+    font-size: 1.25rem;
+    color: rgb(112, 42, 179);
+    font-weight: 600;
+}
+hr{
+    margin: 20px 0;
+}
