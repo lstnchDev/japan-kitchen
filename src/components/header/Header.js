@@ -1,5 +1,4 @@
-import React, {Fragment} from "react"
-import Basket from "../basket/Basket"
+import React from "react"
 import styles from './css/Header.module.css'
 import HeaderMain from "./HeaderMain"
 import HeaderTop from "./HeaderTop"

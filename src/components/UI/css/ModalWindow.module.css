@@ -16,3 +16,20 @@
     align-items: center;
 
 }
+
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+.total__right{
+    text-align: end;
+}
+.btn__close{
+    background-color: white;
+    border: 1px solid rgb(112, 42, 179);
+    color: rgb(112, 42, 179);
+    margin-right: 10px;
+}
+button{
+    margin-top: 20px;
+}

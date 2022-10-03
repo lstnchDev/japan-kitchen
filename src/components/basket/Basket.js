@@ -1,26 +1,23 @@
 import styles from './css/Basket.module.css'
-import cart from "../../img/shopping-cart.png"
-import { useState, useEffect } from 'react'
+import cart from "../../img/icons8-shopping-cart.png"
+import {useContext } from 'react'
+import CartContext from '../../store/cart-context'
 
 const Basket = (props)=>{
-    const [amount, setOrderAmount] = useState(0)
-    useEffect(()=>{
-        if (props.menu !== undefined){
-            console.log(props.menu)
-            let sum = 0
-            for (let item of props.menu){
-                sum += parseInt(item.amount)
-            }
-            setOrderAmount(sum)
-        }
-    })
+    const cartContext = useContext(CartContext)
+
+    const cartItemsNumber = cartContext.items.reduce((current, item)=>{
+        return current + item.amount
+    }, 0)
+
+ 
     const onClickHandler = ()=>props.showBusket(true)
     
     return (
         <div onClick={onClickHandler} className={styles.basket}>
             <img className={styles.cart} src={cart}/>
             <h3>Корзина</h3>
-            <div className={styles.basket__value}>{amount}</div>
+            <div className={styles.basket__value}>{cartItemsNumber}</div>
         </div>
     )
 }

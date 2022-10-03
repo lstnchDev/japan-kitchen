@@ -1,4 +1,5 @@
-import { Fragment, useEffect, useState } from "react"
+import { Fragment, useContext } from "react"
+import CartContext from "../../store/cart-context"
 import BasketItem from "../basket/BasketItem"
 import Button from "./Button"
 import Cards from "./Cards"
@@ -6,31 +7,36 @@ import styles from "./css/ModalWindow.module.css"
 
 const ModalWindow = (props)=>{
 
-    const [totalPrice, setTotalPrice] = useState(0)
-    let basketItem = props.menu?.map((item)=> <BasketItem
+    const cartContext = useContext(CartContext)
+    const totalAmount = cartContext.totalAmount
+    const hasItems = cartContext.items.length > 0
+
+    
+
+    let basketItem = cartContext.items.map((item)=> <BasketItem
+        id={item.id}
         name={item.name}
         price={item.price}
         count={item.amount}
 
     />)
-    useEffect(()=>{
-        let sum = 0
-        for (let item of props.menu){
-            sum += parseInt(item.amount) * parseFloat(item.price)
-        }
-        setTotalPrice(sum)
-    })
+    
     const closeModal = ()=> props.showBusket(false)
     return (
         <Fragment>
-            <div onClick={closeModal} className={styles.modal__background}>
+            <div className={styles.modal__background}>
                 <Cards className={styles.busket}>
-                    {basketItem}
+                    <ul>
+                        {basketItem}
+                    </ul>
                     <div className={styles.total}>
-                        <h3>Итого</h3>
-                        <h3>${totalPrice}</h3>
+                        <h3>Итого:</h3>
+                        <div className={styles.total__right}>
+                            <h3>{totalAmount}</h3>
+                            <Button onClick={closeModal} className={styles.btn__close}>Закрыть</Button>
+                            {hasItems && <Button>Заказать</Button>}
+                        </div>
                     </div>
-                    <Button>Заказать</Button>
                 </Cards>
             </div>
         </Fragment>

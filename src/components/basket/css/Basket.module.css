@@ -4,12 +4,14 @@
     align-self: center;
     background-color: rgb(51, 20, 80);
     padding: 10px 30px;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
 }
+.basket:hover{
+    background-color: #2b0239;
+}
 .cart{
-    width: 30px;
-    background-color: white;
+    width: 30px; 
     margin-right: 10px;
 
 }

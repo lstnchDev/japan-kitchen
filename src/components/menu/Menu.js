@@ -8,6 +8,7 @@ const Menu = (props)=>{
     }
     const menuItem = props.menuList.map((item)=> <MenuItem 
         key = {item.id}
+        id = {item.id}
         name = {item.name}
         ingrediens = {item.ingrediens}
         price = {item.price}
@@ -15,7 +16,9 @@ const Menu = (props)=>{
         />)
     return(
         <Cards className={styles.menu}>
-           {menuItem}
+           <ul>
+            {menuItem}
+           </ul>
         </Cards>
     )
 }

@@ -1,12 +1,14 @@
 import { Fragment, useState } from "react"
 import Button from "../UI/Button"
+import Input from "../UI/Input"
 import styles from "./css/AddToBusket.module.css"
 
 
 const AddToBusket = (props)=>{
+
     const [amount, setAmount] = useState(1)
     const onAmountHandler = (e)=>{
-        setAmount(e.target.value)
+        setAmount(+e.target.value)
     }
     const onSubmitHandler = (e)=>{
         e.preventDefault()
@@ -16,10 +18,7 @@ const AddToBusket = (props)=>{
     return (
         <Fragment>
             <form onSubmit={onSubmitHandler}>
-                <div className={styles.amount}>
-                    <h3>Количество</h3>
-                    <input type="number" min={1} value={amount} onChange={onAmountHandler}/>
-                </div>
+                <Input htmlFor="amount" type="number" min={1} value={amount} onChange={onAmountHandler} />
                 <Button className={styles.amount__btn} type='submit'>Добавить</Button>
             </form>
         </Fragment>
