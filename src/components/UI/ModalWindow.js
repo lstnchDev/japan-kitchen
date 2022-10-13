@@ -11,7 +11,6 @@ const ModalWindow = (props)=>{
     const totalAmount = cartContext.totalAmount
     const hasItems = cartContext.items.length > 0
 
-    
 
     let basketItem = cartContext.items.map((item)=> <BasketItem
         id={item.id}

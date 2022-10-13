@@ -4,17 +4,11 @@ import Button from "../UI/Button"
 import styles from "./css/BasketItem.module.css"
 
 const BasketItem = (props)=>{
-    const [count, setCount] = useState(props.count)
 
     const cartContext = useContext(CartContext)
 
-    
-
     const onDeleteHandler = ()=> {
         cartContext.removeItem(props.id)
-        // localStorage.setItem(props.id, localStorage.getItem(props.id)-1)
-        // setCount(parseInt(count)-1)
-        // props.onChangeCount(true)
     }
     const onAddHandler = ()=> {
         cartContext.addItem({
@@ -23,9 +17,6 @@ const BasketItem = (props)=>{
             amount: 1
     
         })
-        // localStorage.setItem(props.id, parseInt(localStorage.getItem(props.id))+1)
-        // setCount(parseInt(count)+1)
-        // props.onChangeCount(true)
 
     }
 

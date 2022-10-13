@@ -31,7 +31,7 @@ const cartReducer = (state, action) => {
    
         }else updatedItems = state.items.concat(action.item)         
         localStorage.setItem('item', JSON.stringify(updatedItems))
-        localStorage.setItem('totalAmount', updatedTotalAmount)
+        localStorage.setItem('totalAmount', updatedTotalAmount.toFixed(2))
 
         return {
             items: JSON.parse(localStorage.getItem('item')),
@@ -54,7 +54,7 @@ const cartReducer = (state, action) => {
             }
             else {
                 localStorage.setItem('item', JSON.stringify(updatedItems))
-                localStorage.setItem('totalAmount', updatedTotalAmount)
+                localStorage.setItem('totalAmount', updatedTotalAmount.toFixed(2))
         
             }
         }else {
@@ -62,7 +62,7 @@ const cartReducer = (state, action) => {
             updatedItems = [...state.items]
             updatedItems[existingCartItemIndex] = updatedItem
             localStorage.setItem('item', JSON.stringify(updatedItems))
-            localStorage.setItem('totalAmount', updatedTotalAmount)
+            localStorage.setItem('totalAmount', updatedTotalAmount.toFixed(2))
         }
         const currentItems = localStorage.getItem('item') != null ? JSON.parse(localStorage.getItem('item')) : []
         const currentAmount = localStorage.getItem('totalAmount') != null ? JSON.parse(localStorage.getItem('totalAmount')) : 0
