@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/japan-kitchen/static/css/main.6c21fc6a.css",
+    "main.js": "/japan-kitchen/static/js/main.41c6c720.js",
+    "static/media/sushi.jpg": "/japan-kitchen/static/media/sushi.a2b4b921ab28b2b3f6c7.jpg",
+    "index.html": "/japan-kitchen/index.html",
+    "main.6c21fc6a.css.map": "/japan-kitchen/static/css/main.6c21fc6a.css.map",
+    "main.41c6c720.js.map": "/japan-kitchen/static/js/main.41c6c720.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c21fc6a.css",
+    "static/js/main.41c6c720.js"
+  ]
+}
